@@ -232,3 +232,18 @@ body {
 		opacity: 0.5;
 	}
 }
+div.scroll-contact-icons {
+	/* background-color: #333; */
+	overflow: auto;
+	white-space: nowrap;
+	width: 50%;
+}
+  
+div.scroll-contact-icons a {
+	display: inline-block;
+	margin-left: 20px;
+	/* color: white; */
+	text-align: center;
+	padding: 14px;
+	text-decoration: none;
+}

@@ -44,7 +44,7 @@ const AppFooter = () => {
 					<p className="text-3xl sm:text-4xl text-primary-dark dark:text-primary-light mb-5">
 						Follow me
 					</p>
-					<ul className="flex gap-4 sm:gap-8">
+					<ul className="hidden sm:flex gap-4 sm:gap-8">
 						{socialLinks.map((link) => (
 							<a
 								href={link.url}
@@ -58,6 +58,20 @@ const AppFooter = () => {
 							</a>
 						))}
 					</ul>
+					<div className='scroll-contact-icons sm:hidden'>
+						{socialLinks.map((link) => (
+							<a
+								href={link.url}
+								target="__blank"
+								key={link.id}
+								className="text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer rounded-lg bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100 shadow-sm p-4 duration-300"
+							>
+								<i style={{ fontSize: '40px' }}>
+									{link.icon}
+								</i>
+							</a>
+						))}
+					</div>
 				</div>
 
 				<AppFooterCopyright />
