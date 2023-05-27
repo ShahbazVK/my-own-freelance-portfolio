@@ -1478,3 +1478,17 @@ Ensure the default browser behavior of the `hidden` attribute.
     line-height: 2.25rem;
   }
 }
+.search-project-input{
+  width: 40vw;
+}
+@media only screen and (max-width: 638px) {
+  .search-project-input{
+    width: 40vw;
+  }
+}
+@media only screen and (max-width: 530px) {
+  .search-project-input{
+    width: 70vw;
+  }
+}
+

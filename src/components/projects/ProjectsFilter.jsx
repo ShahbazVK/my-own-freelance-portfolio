@@ -12,6 +12,7 @@ const ProjectsFilter = ({ setSelectProject }) => {
 				setSelectProject(e.target.value);
 			}}
 			className="font-general-medium 
+				select-box-input
                 px-4
                 sm:px-6
                 py-2

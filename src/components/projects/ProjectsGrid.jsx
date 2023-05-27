@@ -37,7 +37,9 @@ const ProjectsGrid = () => {
 				</h3>
 				<div
 					className="
-                        flex
+                        sm:flex
+						block
+						text-center
                         justify-between
                         border-b border-primary-light
                         dark:border-secondary-dark
@@ -45,7 +47,7 @@ const ProjectsGrid = () => {
                         gap-3
                         "
 				>
-					<div className="flex justify-between gap-2">
+					<div className="flex sm:justify-between justify-center gap-2">
 						<span
 							className="
                                 hidden
@@ -64,7 +66,9 @@ const ProjectsGrid = () => {
 							onChange={(e) => {
 								setSearchProject(e.target.value);
 							}}
+							// style={{ width: "20rem" }}
 							className="font-general-medium 
+							search-project-input
                                 pl-3
                                 pr-1
                                 sm:px-4
@@ -88,7 +92,7 @@ const ProjectsGrid = () => {
 							aria-label="Name"
 						/>
 					</div>
-
+					<br />
 					<ProjectsFilter setSelectProject={setSelectProject} />
 				</div>
 			</div>
@@ -96,30 +100,30 @@ const ProjectsGrid = () => {
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
 				{selectProject
 					? selectProjectsByCategory.map((project) => (
-							<ProjectSingle
-								title={project.title}
-								category={project.category}
-								image={project.img}
-								key={project.id}
-							/>
-					  ))
+						<ProjectSingle
+							title={project.title}
+							category={project.category}
+							image={project.img}
+							key={project.id}
+						/>
+					))
 					: searchProject
-					? searchProjectsByTitle.map((project) => (
+						? searchProjectsByTitle.map((project) => (
 							<ProjectSingle
 								title={project.title}
 								category={project.category}
 								image={project.img}
 								key={project.id}
 							/>
-					  ))
-					: projects.map((project) => (
+						))
+						: projects.map((project) => (
 							<ProjectSingle
 								title={project.title}
 								category={project.category}
 								image={project.img}
 								key={project.id}
 							/>
-					  ))}
+						))}
 			</div>
 		</section>
 	);

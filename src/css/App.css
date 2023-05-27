@@ -246,6 +246,7 @@ div.scroll-contact-icons {
 	overflow: auto;
 	white-space: nowrap;
 	width: 80vw;
+	text-align: center;
 }
 /* Hide scrollbar for Chrome, Safari and Opera */
 .scroll-contact-icons::-webkit-scrollbar {
