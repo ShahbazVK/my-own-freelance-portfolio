@@ -208,6 +208,7 @@ body {
 .scrollToTop {
 	@apply bg-indigo-600;
 	@apply text-white;
+	/* right: 10px !important; */
 	position: fixed;
 	width: 100%;
 	align-items: center;
@@ -258,3 +259,9 @@ div.scroll-contact-icons {
 	-ms-overflow-style: none;  /* IE and Edge */
 	scrollbar-width: none;  /* Firefox */
   }
+  @media only screen and (max-width: 418px) {
+	.scrollToTop {
+		right: 10px !important;
+	}
+  }
+  

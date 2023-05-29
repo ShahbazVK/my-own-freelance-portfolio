@@ -26,7 +26,7 @@ function App() {
 							<Route path="/" element={<Home />} />
 							<Route path="projects" element={<Projects />} />
 							<Route
-								path="projects/single-project"
+								path="projects/single-project/:name"
 								element={<ProjectSingle />}
 							/>
 

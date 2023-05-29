@@ -37,8 +37,8 @@ const ProjectsGrid = () => {
 				</h3>
 				<div
 					className="
-                        sm:flex
-						block
+                        searchbox-select
+						flex
 						text-center
                         justify-between
                         border-b border-primary-light

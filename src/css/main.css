@@ -1479,16 +1479,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 .search-project-input{
-  width: 40vw;
+  width: 25vw;
 }
 @media only screen and (max-width: 638px) {
   .search-project-input{
-    width: 40vw;
+    width: 30vw;
   }
 }
 @media only screen and (max-width: 530px) {
   .search-project-input{
-    width: 70vw;
+    width: 40vw;
+  }
+}
+@media only screen and (max-width: 418px) {
+  .searchbox-select{
+    display: block;
+  }
+  .search-project-input{
+    width: 11rem;
   }
 }
 

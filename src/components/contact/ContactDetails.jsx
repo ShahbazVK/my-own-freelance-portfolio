@@ -1,14 +1,17 @@
+import { useEffect, useState } from 'react';
 import { FiPhone, FiMapPin, FiMail } from 'react-icons/fi';
 
+
+const constantEmail = "user@gmail.com"
 const contacts = [
 	{
 		id: 1,
-		name: 'Your Address, Your City, Your Country',
+		name: 'Your City, Your Country',
 		icon: <FiMapPin />,
 	},
 	{
 		id: 2,
-		name: 'email@domain.com',
+		name: constantEmail,
 		icon: <FiMail />,
 	},
 	{
@@ -17,8 +20,35 @@ const contacts = [
 		icon: <FiPhone />,
 	},
 ];
-
 const ContactDetails = () => {
+	const [email, setEmail] = useState(constantEmail);
+	useEffect(() => {
+		// console.log("working")
+		const handleResize = () => {
+			const { beforeAt, afterAt } = splitEmailAddress();
+			if (window.innerWidth <= 267) {
+				setEmail(`${beforeAt}@\n${afterAt}`);
+				contacts[1].name = `${beforeAt}@\n${afterAt}`
+			} else {
+				contacts[1].name = constantEmail
+				setEmail(constantEmail);
+			}
+		};
+
+		handleResize(); // Initial check based on the current width
+		window.addEventListener('resize', handleResize);
+
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
+	}, [window.innerWidth]);
+	const splitEmailAddress = () => {
+		const parts = email.split('@');
+		return {
+			beforeAt: parts[0],
+			afterAt: parts[1]
+		};
+	};
 	return (
 		<div className="w-full lg:w-1/2">
 			<div className="text-left max-w-xl px-6">
@@ -31,7 +61,7 @@ const ContactDetails = () => {
 							<i className="text-2xl text-gray-500 dark:text-gray-400 mr-4">
 								{contact.icon}
 							</i>
-							<span className="text-lg mb-4 text-ternary-dark dark:text-ternary-light">
+							<span className="text-lg mb-4 text-ternary-dark dark:text-ternary-light break-words">
 								{contact.name}
 							</span>
 						</li>
