@@ -48,4 +48,16 @@ export const projectsData = [
 		category: 'Web Application',
 		img: WebImage1,
 	},
+	{
+		id: 7,
+		title: 'example ABC',
+		category: 'UI/UX Design',
+		img: UIImage1,
+	},
+	{
+		id: 8,
+		title: 'example DEF',
+		category: 'Mobile Application',
+		img: UIImage2,
+	},
 ];
