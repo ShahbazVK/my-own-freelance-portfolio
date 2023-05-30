@@ -13,6 +13,14 @@ export const SingleProjectProvider = ({ children }) => {
 			}
 		})
 	);
+	useEffect(() => {
+		setSingleProjectData(singleProjectDataJson.map((el, key) => {
+			if (el.ProjectHeader.title === params.name) {
+				return singleProjectDataJson[key]
+			}
+		}))
+	}, [params.name])
+
 	let onlyCurrentProject = singleProjectData.filter((el) => el !== undefined)
 	return (
 		<SingleProjectContext.Provider
