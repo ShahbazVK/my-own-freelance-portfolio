@@ -6,21 +6,21 @@ const SingleProjectContext = createContext();
 
 export const SingleProjectProvider = ({ children }) => {
 	const params = useParams()
+	const name = params.name.replace(/-/g, ' ')
 	const [singleProjectData, setSingleProjectData] = useState(
 		singleProjectDataJson.map((el, key) => {
-			if (el.ProjectHeader.title === params.name) {
+			if (el.ProjectHeader.title.toLowerCase() === name) {
 				return singleProjectDataJson[key]
 			}
 		})
 	);
 	useEffect(() => {
 		setSingleProjectData(singleProjectDataJson.map((el, key) => {
-			if (el.ProjectHeader.title === params.name) {
+			if (el.ProjectHeader.title.toLowerCase() === name) {
 				return singleProjectDataJson[key]
 			}
 		}))
-	}, [params.name])
-
+	}, [name])
 	let onlyCurrentProject = singleProjectData.filter((el) => el !== undefined)
 	return (
 		<SingleProjectContext.Provider

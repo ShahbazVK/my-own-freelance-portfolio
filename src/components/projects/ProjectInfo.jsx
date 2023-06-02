@@ -50,6 +50,29 @@ const ProjectInfo = () => {
 					</p>
 				</div>
 
+				{/* URLs code */}
+				<div className="mb-7">
+					<p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
+						{onlyCurrentProject.ProjectInfo.CodeUrlHeading}
+					</p>
+					<a href={onlyCurrentProject.ProjectInfo.codeUrl} className="font-general-regular text-primary-dark dark:text-ternary-light hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer duration-300">
+						View Github Repo
+					</a>
+				</div>
+
+
+				{/* URL demo */}
+				<div className="mb-7">
+					<p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
+						{onlyCurrentProject.ProjectInfo.demoUrlHeading}
+					</p>
+					<a href={onlyCurrentProject.ProjectInfo.demoUrl} className="font-general-regular text-primary-dark dark:text-ternary-light hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer duration-300">
+						View Demo
+					</a>
+				</div>
+
+
+
 				{/* Single project technologies */}
 				<div className="mb-7">
 					<p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">

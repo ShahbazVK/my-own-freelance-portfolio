@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import SingleProjectContext from '../../context/SingleProjectContext';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import slugify from 'react-slugify';
 
 const ProjectRelatedProjects = () => {
-	const navigate = useNavigate()
 	const { onlyCurrentProject } = useContext(SingleProjectContext);
 
 	return (
@@ -15,7 +15,7 @@ const ProjectRelatedProjects = () => {
 			<div className="grid grid-cols-1 sm:grid-cols-4 gap-10">
 				{onlyCurrentProject.RelatedProject.Projects.map((project) => {
 					return (
-						<Link to={`/projects/single-project/${project.title}`}>
+						<Link to={`/projects/single-project/${slugify(project.title)}`}>
 							<img
 								src={project.img}
 								className="rounded-xl cursor-pointer"

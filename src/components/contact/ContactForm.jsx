@@ -1,13 +1,24 @@
+import { useRef } from 'react';
 import Button from '../reusable/Button';
 import FormInput from '../reusable/FormInput';
+import emailjs from '@emailjs/browser';
+
 
 const ContactForm = () => {
+	const form = useRef()
 	return (
 		<div className="w-full lg:w-1/2">
 			<div className="leading-loose">
 				<form
+					ref={form}
 					onSubmit={(e) => {
 						e.preventDefault();
+						emailjs.sendForm(process.env.REACT_APP_SERVICE_KEY_EMAILJS, process.env.REACT_APP_TEMPLATE_KEY_EMAILJS, form.current, process.env.REACT_APP_PUBLIC_KEY_EMAILJS)
+							.then((result) => {
+								alert("Form Submitted")
+							}, (error) => {
+								alert(error.text);
+							});
 					}}
 					className="max-w-xl m-4 p-6 sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
 				>
@@ -59,7 +70,7 @@ const ContactForm = () => {
 						></textarea>
 					</div>
 
-					<div className="font-general-medium w-40 px-4 py-2.5 text-white text-center font-medium tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg mt-6 duration-500">
+					<div className="send-message-size font-general-medium px-4 py-2.5 text-white text-center font-medium tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg mt-6 duration-500">
 						<Button
 							title="Send Message"
 							type="submit"

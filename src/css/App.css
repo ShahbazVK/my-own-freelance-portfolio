@@ -263,5 +263,15 @@ div.scroll-contact-icons {
 	.scrollToTop {
 		right: 10px !important;
 	}
+	.send-message-size{
+		width: 100%;
+	}
+	.logo-img{
+		padding-right: 1rem !important;
+	}
   }
-  
+  @media only screen and (min-width: 418px) {
+	.send-message-size{
+		width: 12rem;
+	}
+  }

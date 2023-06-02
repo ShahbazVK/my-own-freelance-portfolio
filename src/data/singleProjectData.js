@@ -71,6 +71,10 @@ export const singleProjectData = [
 			ObjectivesHeading: 'Objective',
 			ObjectivesDetails:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus! Quibusdam enim quod in esse, mollitia molestias incidunt quas ipsa accusamus veniam.',
+			CodeUrlHeading: "Code",
+			codeUrl: "https://www.google.com/codeurl",
+			demoUrlHeading: "Demo",
+			demoUrl: "https://www.google.com/demourl",
 			Technologies: [
 				{
 					title: 'Tools & Technologies',
@@ -84,7 +88,7 @@ export const singleProjectData = [
 					],
 				},
 			],
-			ProjectDetailsHeading: 'Challenge',
+			ProjectDetailsHeading: 'Description',
 			ProjectDetails: [
 				{
 					id: 1,
@@ -230,6 +234,10 @@ export const singleProjectData = [
 			ObjectivesHeading: 'Objective',
 			ObjectivesDetails:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus! Quibusdam enim quod in esse, mollitia molestias incidunt quas ipsa accusamus veniam.',
+			CodeUrlHeading: "Code",
+			codeUrl: "https://www.google.com/codeurl",
+			demoUrlHeading: "Demo",
+			demoUrl: "https://www.google.com/demourl",
 			Technologies: [
 				{
 					title: 'Tools & Technologies',
@@ -243,7 +251,7 @@ export const singleProjectData = [
 					],
 				},
 			],
-			ProjectDetailsHeading: 'Challenge',
+			ProjectDetailsHeading: 'Description',
 			ProjectDetails: [
 				{
 					id: 1,
@@ -388,6 +396,10 @@ export const singleProjectData = [
 			ObjectivesHeading: 'Objective',
 			ObjectivesDetails:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus! Quibusdam enim quod in esse, mollitia molestias incidunt quas ipsa accusamus veniam.',
+			CodeUrlHeading: "Code",
+			codeUrl: "https://www.google.com/codeurl",
+			demoUrlHeading: "Demo",
+			demoUrl: "https://www.google.com/demourl",
 			Technologies: [
 				{
 					title: 'Tools & Technologies',
@@ -401,7 +413,7 @@ export const singleProjectData = [
 					],
 				},
 			],
-			ProjectDetailsHeading: 'Challenge',
+			ProjectDetailsHeading: 'Description',
 			ProjectDetails: [
 				{
 					id: 1,
@@ -524,6 +536,10 @@ export const singleProjectData = [
 			ObjectivesHeading: 'Objective',
 			ObjectivesDetails:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus! Quibusdam enim quod in esse, mollitia molestias incidunt quas ipsa accusamus veniam.',
+			CodeUrlHeading: "Code",
+			codeUrl: "https://www.google.com/codeurl",
+			demoUrlHeading: "Demo",
+			demoUrl: "https://www.google.com/demourl",
 			Technologies: [
 				{
 					title: 'Tools & Technologies',
@@ -537,7 +553,7 @@ export const singleProjectData = [
 					],
 				},
 			],
-			ProjectDetailsHeading: 'Challenge',
+			ProjectDetailsHeading: 'Description',
 			ProjectDetails: [
 				{
 					id: 1,
@@ -658,6 +674,10 @@ export const singleProjectData = [
 			ObjectivesHeading: 'Objective',
 			ObjectivesDetails:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus! Quibusdam enim quod in esse, mollitia molestias incidunt quas ipsa accusamus veniam.',
+			CodeUrlHeading: "Code",
+			codeUrl: "https://www.google.com/codeurl",
+			demoUrlHeading: "Demo",
+			demoUrl: "https://www.google.com/demourl",
 			Technologies: [
 				{
 					title: 'Tools & Technologies',
@@ -671,7 +691,7 @@ export const singleProjectData = [
 					],
 				},
 			],
-			ProjectDetailsHeading: 'Challenge',
+			ProjectDetailsHeading: 'Description',
 			ProjectDetails: [
 				{
 					id: 1,
@@ -794,6 +814,10 @@ export const singleProjectData = [
 			ObjectivesHeading: 'Objective',
 			ObjectivesDetails:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus! Quibusdam enim quod in esse, mollitia molestias incidunt quas ipsa accusamus veniam.',
+			CodeUrlHeading: "Code",
+			codeUrl: "https://www.google.com/codeurl",
+			demoUrlHeading: "Demo",
+			demoUrl: "https://www.google.com/demourl",
 			Technologies: [
 				{
 					title: 'Tools & Technologies',
@@ -807,7 +831,7 @@ export const singleProjectData = [
 					],
 				},
 			],
-			ProjectDetailsHeading: 'Challenge',
+			ProjectDetailsHeading: 'Description',
 			ProjectDetails: [
 				{
 					id: 1,
@@ -924,6 +948,10 @@ export const singleProjectData = [
 			ObjectivesHeading: 'Objective',
 			ObjectivesDetails:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus! Quibusdam enim quod in esse, mollitia molestias incidunt quas ipsa accusamus veniam.',
+			CodeUrlHeading: "Code",
+			codeUrl: "https://www.google.com/codeurl",
+			demoUrlHeading: "Demo",
+			demoUrl: "https://www.google.com/demourl",
 			Technologies: [
 				{
 					title: 'Tools & Technologies',
@@ -937,7 +965,7 @@ export const singleProjectData = [
 					],
 				},
 			],
-			ProjectDetailsHeading: 'Challenge',
+			ProjectDetailsHeading: 'Description',
 			ProjectDetails: [
 				{
 					id: 1,
