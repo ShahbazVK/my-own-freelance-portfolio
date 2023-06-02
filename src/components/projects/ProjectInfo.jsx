@@ -90,7 +90,7 @@ const ProjectInfo = () => {
 					<p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
 						{onlyCurrentProject.ProjectInfo.SocialSharingHeading}
 					</p>
-					<div className="flex items-center gap-3 mt-5">
+					<div className="flex items-center gap-3 mt-5 flexWrap">
 						{onlyCurrentProject.ProjectInfo.SocialSharing.map(
 							(social) => {
 								return (

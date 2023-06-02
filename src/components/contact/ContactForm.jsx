@@ -71,7 +71,7 @@ const ContactForm = () => {
 						></textarea>
 					</div>
 
-					<div className="send-message-size font-general-medium px-4 py-2.5 text-white text-center font-medium tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg mt-6 duration-500">
+					<div className="send-message-size font-general-medium px-4 py-2.5 text-white text-center font-medium tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg mt-6 duration-500 controlPadding-2">
 						<Button
 							title="Send Message"
 							type="submit"

@@ -10,13 +10,8 @@ export const projectsData = [
 	{
 		id: 1,
 		title: 'Google Health Platform',
-		category: 'Web Application',
+		category: 'Web3 Application',
 		img: WebImage2,
-		ProjectHeader: {
-			title: 'Project Management UI - From Context',
-			publishDate: 'Jul 26, 2021',
-			tags: 'UI / Frontend',
-		},
 	},
 	{
 		id: 2,
