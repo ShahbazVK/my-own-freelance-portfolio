@@ -15,6 +15,7 @@ const ContactForm = () => {
 						e.preventDefault();
 						emailjs.sendForm(process.env.REACT_APP_SERVICE_KEY_EMAILJS, process.env.REACT_APP_TEMPLATE_KEY_EMAILJS, form.current, process.env.REACT_APP_PUBLIC_KEY_EMAILJS)
 							.then((result) => {
+								e.target.reset()
 								alert("Form Submitted")
 							}, (error) => {
 								alert(error.text);
