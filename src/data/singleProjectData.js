@@ -51,11 +51,11 @@ const processData = () => {
 			},
 		]
 
-		let category = (projectsData.find(project => project.title === rawProject.ProjectHeader.title)).category
+		let category = (projectsData.find(project => project.id === rawProject.id)).category
 
 		rawProject['RelatedProject'] = {
 			title: 'Related Projects',
-			Projects: projectsData.filter(project => project.category === category && project.title != rawProject.ProjectHeader.title)
+			Projects: projectsData.filter(project => project.category === category && project.id != rawProject.id)
 		}
 
 		return rawProject
@@ -64,8 +64,9 @@ const processData = () => {
 
 let singleProjectRawData = [
 	{
+		id:1,
 		ProjectHeader: {
-			title: 'Google Health Platform',
+			title: 'Computer Vision Assisted Drive Thru Store with On chain Transactions',
 			publishDate: 'Jul 26, 2021',
 			tags: 'UI / Frontend',
 		},
@@ -91,24 +92,24 @@ let singleProjectRawData = [
 			CompanyInfo: [
 				{
 					id: 1,
-					title: 'Name',
-					details: 'Company Ltd',
+					title: 'Challenge',
+					details: 'Personal Project',
 				},
-				{
-					id: 2,
-					title: 'Services',
-					details: 'UI Design & Frontend Development',
-				},
-				{
-					id: 3,
-					title: 'Website',
-					details: 'https://company.com',
-				},
-				{
-					id: 4,
-					title: 'Phone',
-					details: '555 8888 888',
-				},
+				// {
+				// 	id: 2,
+				// 	title: 'Services',
+				// 	details: 'UI Design & Frontend Development',
+				// },
+				// {
+				// 	id: 3,
+				// 	title: 'Website',
+				// 	details: 'https://company.com',
+				// },
+				// {
+				// 	id: 4,
+				// 	title: 'Phone',
+				// 	details: '555 8888 888',
+				// },
 			],
 			ObjectivesHeading: 'Objective',
 			ObjectivesDetails:
@@ -190,6 +191,7 @@ let singleProjectRawData = [
 
 
 	{
+		id:2,
 		ProjectHeader: {
 			title: 'Phoenix Digital Agency',
 			publishDate: 'Jul 26, 2021',
@@ -218,17 +220,17 @@ let singleProjectRawData = [
 				{
 					id: 1,
 					title: 'Name',
-					details: 'Company Ltd',
+					details: 'Company Ltd Company Ltd',
 				},
 				{
 					id: 2,
 					title: 'Services',
-					details: 'UI Design & Frontend Development',
+					details: 'UI Design & Frontend Development UI Design & Frontend Development UI Design & Frontend Development',
 				},
 				{
 					id: 3,
 					title: 'Website',
-					details: 'https://company.com',
+					details: 'https://UIDesignUIDesignUIDesignUIDesignUIDesignUIDesign.com',
 				},
 				{
 					id: 4,
@@ -315,6 +317,7 @@ let singleProjectRawData = [
 
 
 	{
+		id:3,
 		ProjectHeader: {
 			title: 'Project Management UI',
 			publishDate: 'Jul 26, 2021',
@@ -418,6 +421,7 @@ let singleProjectRawData = [
 
 
 	{
+		id:4,
 		ProjectHeader: {
 			title: 'Cloud Storage Platform',
 			publishDate: 'Jul 26, 2021',
@@ -519,6 +523,7 @@ let singleProjectRawData = [
 
 
 	{
+		id:5,
 		ProjectHeader: {
 			title: 'React Social App',
 			publishDate: 'Jul 26, 2021',
@@ -622,6 +627,7 @@ let singleProjectRawData = [
 
 
 	{
+		id:6,
 		ProjectHeader: {
 			title: 'Apple Design System',
 			publishDate: 'Jul 26, 2021',
@@ -718,6 +724,7 @@ let singleProjectRawData = [
 
 
 	{
+		id:7,
 		ProjectHeader: {
 			title: 'example ABC',
 			publishDate: 'Jul 26, 2021',

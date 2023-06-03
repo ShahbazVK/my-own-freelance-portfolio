@@ -16,7 +16,7 @@ const ProjectRelatedProjects = () => {
 					{onlyCurrentProject.RelatedProject.title}
 				</p>
 
-				<div className="grid grid-cols-1 sm:grid-cols-4 gap-10">
+				<div className="grid grid-cols-1 sm:grid-cols-4 gap-10 controlGap">
 					{onlyCurrentProject.RelatedProject.Projects.map((project) => {
 						return (
 							<Link to={`/projects/single-project/${slugify(project.title)}`}>
@@ -26,7 +26,7 @@ const ProjectRelatedProjects = () => {
 									alt={project.title}
 									key={project.id}
 								/>
-								<p className='text-center text-primary-dark dark:text-primary-light'>{project.title}</p>
+								<p className='text-center text-primary-dark dark:text-primary-light mt-2 text-lg controlText truncateMul'>{project.title}</p>
 							</Link>
 						);
 					})}

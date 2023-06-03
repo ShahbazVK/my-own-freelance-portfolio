@@ -15,17 +15,18 @@ const ProjectInfo = () => {
 					<ul className="leading-loose">
 						{onlyCurrentProject.ProjectInfo.CompanyInfo.map(
 							(info) => {
+								const isWebsite = info.title=='Website'
+
 								return (
 									<li
-										className="font-general-regular text-ternary-dark dark:text-ternary-light"
+										className="font-general-regular text-ternary-dark dark:text-ternary-light textJustify overflowControl"
 										key={info.id}
 									>
 										<span>{info.title}: </span>
 										<a
-											href="https://stoman.me"
+											{...(isWebsite && { href:info.details })}
 											className={
-												info.title === 'Website' ||
-													info.title === 'Phone'
+												info.title === 'Website'
 													? 'hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer duration-300'
 													: ''
 											}
@@ -45,7 +46,7 @@ const ProjectInfo = () => {
 					<p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
 						{onlyCurrentProject.ProjectInfo.ObjectivesHeading}
 					</p>
-					<p className="font-general-regular text-primary-dark dark:text-ternary-light">
+					<p className="font-general-regular text-primary-dark dark:text-ternary-light textJustify">
 						{onlyCurrentProject.ProjectInfo.ObjectivesDetails}
 					</p>
 				</div>
@@ -56,7 +57,7 @@ const ProjectInfo = () => {
 						{onlyCurrentProject.ProjectInfo.CodeUrlHeading}
 					</p>
 					<a href={onlyCurrentProject.ProjectInfo.codeUrl} className="font-general-regular text-primary-dark dark:text-ternary-light hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer duration-300">
-						View Github Repo
+						View Github Repository
 					</a>
 				</div>
 
@@ -67,7 +68,7 @@ const ProjectInfo = () => {
 						{onlyCurrentProject.ProjectInfo.demoUrlHeading}
 					</p>
 					<a href={onlyCurrentProject.ProjectInfo.demoUrl} className="font-general-regular text-primary-dark dark:text-ternary-light hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer duration-300">
-						View Demo
+						Project Preview
 					</a>
 				</div>
 
@@ -78,7 +79,7 @@ const ProjectInfo = () => {
 					<p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
 						{onlyCurrentProject.ProjectInfo.Technologies[0].title}
 					</p>
-					<p className="font-general-regular text-primary-dark dark:text-ternary-light">
+					<p className="font-general-regular text-primary-dark dark:text-ternary-light textJustify">
 						{onlyCurrentProject.ProjectInfo.Technologies[0].techs.join(
 							', '
 						)}
@@ -114,14 +115,14 @@ const ProjectInfo = () => {
 
 			{/*  Single project right section */}
 			<div className="w-full sm:w-2/3 text-left mt-10 sm:mt-0">
-				<p className="font-general-regular text-primary-dark dark:text-primary-light text-2xl font-bold mb-7">
+				<p className="font-general-regular text-primary-dark dark:text-primary-light text-2xl font-bold mb-3">
 					{onlyCurrentProject.ProjectInfo.ProjectDetailsHeading}
 				</p>
 				{onlyCurrentProject.ProjectInfo.ProjectDetails.map((details) => {
 					return (
 						<p
 							key={details.id}
-							className="font-general-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light"
+							className="font-general-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light textJustify"
 						>
 							{details.details}
 						</p>
