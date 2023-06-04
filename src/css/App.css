@@ -236,10 +236,11 @@ body {
   
 div.scroll-contact-icons a {
 	display: inline-block;
-	margin-left: 20px;
-	/* color: white; */
+	/* margin-left: 20px; */
+	margin-right: 14px;
+	color: white;
 	text-align: center;
-	padding: 14px;
+	/* padding: 14px; */
 	text-decoration: none;
 }
 div.scroll-contact-icons {
@@ -251,17 +252,58 @@ div.scroll-contact-icons {
 }
 /* Hide scrollbar for Chrome, Safari and Opera */
 .scroll-contact-icons::-webkit-scrollbar {
-	display: none;
-  }
+	/* display: none; */
+	height: 6px;
+}
+/* .scroll-contact-icons::-webkit-scrollbar-track { */
+/* } */
+   
+  /* Handle */
+.scroll-contact-icons::-webkit-scrollbar-thumb {
+	background: rgb(99 102 241 / var(--tw-bg-opacity)); 
+}
   
   /* Hide scrollbar for IE, Edge and Firefox */
-  .scroll-contact-icons {
+.scroll-contact-icons {
 	-ms-overflow-style: none;  /* IE and Edge */
 	scrollbar-width: none;  /* Firefox */
-  }
-  @media only screen and (max-width: 418px) {
+}
+@media only screen and (max-width: 768px) {
+	.hamburger-icon{
+		
+	}
+	.small-screen-theme{
+		/* order: 2; */
+	}
+	.large-screen-theme{
+		display: none;
+	}
+	.small-screen-theme-and-hamburger{
+		width: 80vw;
+		justify-content: end;
+	}
+	.logo-img{
+		width: 40%;
+	}
+}
+@media only screen and (max-width: 418px) {
+	.logo-img{
+		width: 20rem;
+	}
+}
+@media only screen and (min-width: 768px) {
+	.hamburger-icon{
+		display: none;
+	}
+	.small-screen-theme{
+		display: none;
+	}
+}
+@media only screen and (max-width: 418px) {
 	.scrollToTop {
-		right: 10px !important;
+		right: 20px !important;
+		width: 2rem;
+		height: 2rem;
 	}
 	.send-message-size{
 		width: 100%;
@@ -269,9 +311,13 @@ div.scroll-contact-icons {
 	.logo-img{
 		padding-right: 1rem !important;
 	}
-  }
-  @media only screen and (min-width: 418px) {
+}
+@media only screen and (min-width: 418px) {
 	.send-message-size{
 		width: 12rem;
 	}
-  }
+	.scrollToTop{
+		width: 2.6rem;
+		height: 2.6rem;
+	}
+}

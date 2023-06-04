@@ -67,7 +67,7 @@ const ProjectInfo = () => {
 						{onlyCurrentProject.ProjectInfo.demoUrlHeading}
 					</p>
 					<a href={onlyCurrentProject.ProjectInfo.demoUrl} className="font-general-regular text-primary-dark dark:text-ternary-light hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer duration-300">
-						View Demo
+						Preview
 					</a>
 				</div>
 

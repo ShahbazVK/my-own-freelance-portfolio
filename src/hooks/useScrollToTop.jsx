@@ -37,8 +37,8 @@ const useScrollToTop = () => {
 				className="scrollToTop bg-secondary-light"
 				onClick={backToTop}
 				style={{
-					height: 45,
-					width: 45,
+					// height: 45,
+					// width: 45,
 					borderRadius: 50,
 					right: 50,
 					bottom: 50,
