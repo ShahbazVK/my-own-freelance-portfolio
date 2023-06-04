@@ -23,7 +23,7 @@ const ProjectSingle = ({ title, category, image }) => {
 						/>
 					</div>
 					<div className="text-center px-4 py-6">
-						<p className="font-general-medium text-lg md:text-xl text-ternary-dark dark:text-ternary-light mb-2">
+						<p className="font-general-medium text-lg md:text-xl text-ternary-dark dark:text-ternary-light mb-2 truncate">
 							{title}
 						</p>
 						<span className="text-lg text-ternary-dark dark:text-ternary-light">

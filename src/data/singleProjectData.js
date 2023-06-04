@@ -15,15 +15,58 @@ import {
 } from 'react-icons/fi';
 import { projectsData } from './projects';
 
-export const relatedProjectsFunc = (category) => {
-	return projectsData.filter((el) => el.category === category)
-}
-// relatedProjectsFunc('Web Application')
+const processData = () => {
+	return singleProjectRawData.map(rawProject => {
+		rawProject['ProjectInfo'].SocialSharingHeading = 'Share This'
+		rawProject['ProjectInfo'].SocialSharing = [
+			{
+				id: 1,
+				name: 'Twitter',
+				icon: <FiTwitter />,
+				url: 'https://twitter.com/realstoman',
+			},
+			{
+				id: 2,
+				name: 'Instagram',
+				icon: <FiInstagram />,
+				url: 'https://instagram.com/realstoman',
+			},
+			{
+				id: 3,
+				name: 'Facebook',
+				icon: <FiFacebook />,
+				url: 'https://facebook.com/',
+			},
+			{
+				id: 4,
+				name: 'LinkedIn',
+				icon: <FiLinkedin />,
+				url: 'https://linkedin.com/',
+			},
+			{
+				id: 5,
+				name: 'Youtube',
+				icon: <FiYoutube />,
+				url: 'https://www.youtube.com/c/StomanStudio',
+			},
+		]
 
-export const singleProjectData = [
+		let category = (projectsData.find(project => project.id === rawProject.id)).category
+
+		rawProject['RelatedProject'] = {
+			title: 'Related Projects',
+			Projects: projectsData.filter(project => project.category === category && project.id != rawProject.id)
+		}
+
+		return rawProject
+	})
+}
+
+let singleProjectRawData = [
 	{
+		id:1,
 		ProjectHeader: {
-			title: 'Google Health Platform',
+			title: 'Computer Vision Assisted Drive Thru Store with On chain Transactions',
 			publishDate: 'Jul 26, 2021',
 			tags: 'UI / Frontend',
 		},
@@ -49,24 +92,24 @@ export const singleProjectData = [
 			CompanyInfo: [
 				{
 					id: 1,
-					title: 'Name',
-					details: 'Company Ltd',
+					title: 'Challenge',
+					details: 'Personal Project',
 				},
-				{
-					id: 2,
-					title: 'Services',
-					details: 'UI Design & Frontend Development',
-				},
-				{
-					id: 3,
-					title: 'Website',
-					details: 'https://company.com',
-				},
-				{
-					id: 4,
-					title: 'Phone',
-					details: '555 8888 888',
-				},
+				// {
+				// 	id: 2,
+				// 	title: 'Services',
+				// 	details: 'UI Design & Frontend Development',
+				// },
+				// {
+				// 	id: 3,
+				// 	title: 'Website',
+				// 	details: 'https://company.com',
+				// },
+				// {
+				// 	id: 4,
+				// 	title: 'Phone',
+				// 	details: '555 8888 888',
+				// },
 			],
 			ObjectivesHeading: 'Objective',
 			ObjectivesDetails:
@@ -111,44 +154,7 @@ export const singleProjectData = [
 						'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.',
 				},
 			],
-			SocialSharingHeading: 'Share This',
-			SocialSharing: [
-				{
-					id: 1,
-					name: 'Twitter',
-					icon: <FiTwitter />,
-					url: 'https://twitter.com/realstoman',
-				},
-				{
-					id: 2,
-					name: 'Instagram',
-					icon: <FiInstagram />,
-					url: 'https://instagram.com/realstoman',
-				},
-				{
-					id: 3,
-					name: 'Facebook',
-					icon: <FiFacebook />,
-					url: 'https://facebook.com/',
-				},
-				{
-					id: 4,
-					name: 'LinkedIn',
-					icon: <FiLinkedin />,
-					url: 'https://linkedin.com/',
-				},
-				{
-					id: 5,
-					name: 'Youtube',
-					icon: <FiYoutube />,
-					url: 'https://www.youtube.com/c/StomanStudio',
-				},
-			],
-		},
-		RelatedProject: {
-			title: 'Related Projects',
-			Projects: relatedProjectsFunc('Web Application')
-		},
+		}
 	},
 
 
@@ -185,6 +191,7 @@ export const singleProjectData = [
 
 
 	{
+		id:2,
 		ProjectHeader: {
 			title: 'Phoenix Digital Agency',
 			publishDate: 'Jul 26, 2021',
@@ -213,17 +220,17 @@ export const singleProjectData = [
 				{
 					id: 1,
 					title: 'Name',
-					details: 'Company Ltd',
+					details: 'Company Ltd Company Ltd',
 				},
 				{
 					id: 2,
 					title: 'Services',
-					details: 'UI Design & Frontend Development',
+					details: 'UI Design & Frontend Development UI Design & Frontend Development UI Design & Frontend Development',
 				},
 				{
 					id: 3,
 					title: 'Website',
-					details: 'https://company.com',
+					details: 'https://UIDesignUIDesignUIDesignUIDesignUIDesignUIDesign.com',
 				},
 				{
 					id: 4,
@@ -274,44 +281,7 @@ export const singleProjectData = [
 						'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.',
 				},
 			],
-			SocialSharingHeading: 'Share This',
-			SocialSharing: [
-				{
-					id: 1,
-					name: 'Twitter',
-					icon: <FiTwitter />,
-					url: 'https://twitter.com/realstoman',
-				},
-				{
-					id: 2,
-					name: 'Instagram',
-					icon: <FiInstagram />,
-					url: 'https://instagram.com/realstoman',
-				},
-				{
-					id: 3,
-					name: 'Facebook',
-					icon: <FiFacebook />,
-					url: 'https://facebook.com/',
-				},
-				{
-					id: 4,
-					name: 'LinkedIn',
-					icon: <FiLinkedin />,
-					url: 'https://linkedin.com/',
-				},
-				{
-					id: 5,
-					name: 'Youtube',
-					icon: <FiYoutube />,
-					url: 'https://www.youtube.com/c/StomanStudio',
-				},
-			],
-		},
-		RelatedProject: {
-			title: 'Related Projects',
-			Projects: relatedProjectsFunc('Mobile Application'),
-		},
+		}
 	},
 
 
@@ -347,6 +317,7 @@ export const singleProjectData = [
 
 
 	{
+		id:3,
 		ProjectHeader: {
 			title: 'Project Management UI',
 			publishDate: 'Jul 26, 2021',
@@ -436,44 +407,7 @@ export const singleProjectData = [
 						'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.',
 				},
 			],
-			SocialSharingHeading: 'Share This',
-			SocialSharing: [
-				{
-					id: 1,
-					name: 'Twitter',
-					icon: <FiTwitter />,
-					url: 'https://twitter.com/realstoman',
-				},
-				{
-					id: 2,
-					name: 'Instagram',
-					icon: <FiInstagram />,
-					url: 'https://instagram.com/realstoman',
-				},
-				{
-					id: 3,
-					name: 'Facebook',
-					icon: <FiFacebook />,
-					url: 'https://facebook.com/',
-				},
-				{
-					id: 4,
-					name: 'LinkedIn',
-					icon: <FiLinkedin />,
-					url: 'https://linkedin.com/',
-				},
-				{
-					id: 5,
-					name: 'Youtube',
-					icon: <FiYoutube />,
-					url: 'https://www.youtube.com/c/StomanStudio',
-				},
-			],
-		},
-		RelatedProject: {
-			title: 'Related Projects',
-			Projects: relatedProjectsFunc('UI/UX Design'),
-		},
+		}
 	},
 
 
@@ -487,6 +421,7 @@ export const singleProjectData = [
 
 
 	{
+		id:4,
 		ProjectHeader: {
 			title: 'Cloud Storage Platform',
 			publishDate: 'Jul 26, 2021',
@@ -576,44 +511,7 @@ export const singleProjectData = [
 						'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.',
 				},
 			],
-			SocialSharingHeading: 'Share This',
-			SocialSharing: [
-				{
-					id: 1,
-					name: 'Twitter',
-					icon: <FiTwitter />,
-					url: 'https://twitter.com/realstoman',
-				},
-				{
-					id: 2,
-					name: 'Instagram',
-					icon: <FiInstagram />,
-					url: 'https://instagram.com/realstoman',
-				},
-				{
-					id: 3,
-					name: 'Facebook',
-					icon: <FiFacebook />,
-					url: 'https://facebook.com/',
-				},
-				{
-					id: 4,
-					name: 'LinkedIn',
-					icon: <FiLinkedin />,
-					url: 'https://linkedin.com/',
-				},
-				{
-					id: 5,
-					name: 'Youtube',
-					icon: <FiYoutube />,
-					url: 'https://www.youtube.com/c/StomanStudio',
-				},
-			],
-		},
-		RelatedProject: {
-			title: 'Related Projects',
-			Projects: relatedProjectsFunc('UI/UX Design')
-		},
+		}
 	},
 
 
@@ -625,6 +523,7 @@ export const singleProjectData = [
 
 
 	{
+		id:5,
 		ProjectHeader: {
 			title: 'React Social App',
 			publishDate: 'Jul 26, 2021',
@@ -714,44 +613,7 @@ export const singleProjectData = [
 						'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.',
 				},
 			],
-			SocialSharingHeading: 'Share This',
-			SocialSharing: [
-				{
-					id: 1,
-					name: 'Twitter',
-					icon: <FiTwitter />,
-					url: 'https://twitter.com/realstoman',
-				},
-				{
-					id: 2,
-					name: 'Instagram',
-					icon: <FiInstagram />,
-					url: 'https://instagram.com/realstoman',
-				},
-				{
-					id: 3,
-					name: 'Facebook',
-					icon: <FiFacebook />,
-					url: 'https://facebook.com/',
-				},
-				{
-					id: 4,
-					name: 'LinkedIn',
-					icon: <FiLinkedin />,
-					url: 'https://linkedin.com/',
-				},
-				{
-					id: 5,
-					name: 'Youtube',
-					icon: <FiYoutube />,
-					url: 'https://www.youtube.com/c/StomanStudio',
-				},
-			],
-		},
-		RelatedProject: {
-			title: 'Related Projects',
-			Projects: relatedProjectsFunc('Mobile Application'),
-		},
+		}
 	},
 
 
@@ -765,6 +627,7 @@ export const singleProjectData = [
 
 
 	{
+		id:6,
 		ProjectHeader: {
 			title: 'Apple Design System',
 			publishDate: 'Jul 26, 2021',
@@ -854,51 +717,14 @@ export const singleProjectData = [
 						'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.',
 				},
 			],
-			SocialSharingHeading: 'Share This',
-			SocialSharing: [
-				{
-					id: 1,
-					name: 'Twitter',
-					icon: <FiTwitter />,
-					url: 'https://twitter.com/realstoman',
-				},
-				{
-					id: 2,
-					name: 'Instagram',
-					icon: <FiInstagram />,
-					url: 'https://instagram.com/realstoman',
-				},
-				{
-					id: 3,
-					name: 'Facebook',
-					icon: <FiFacebook />,
-					url: 'https://facebook.com/',
-				},
-				{
-					id: 4,
-					name: 'LinkedIn',
-					icon: <FiLinkedin />,
-					url: 'https://linkedin.com/',
-				},
-				{
-					id: 5,
-					name: 'Youtube',
-					icon: <FiYoutube />,
-					url: 'https://www.youtube.com/c/StomanStudio',
-				},
-			],
-		},
-		RelatedProject: {
-			title: 'Related Projects',
-			Projects: relatedProjectsFunc('Web Application'),
-
-		},
+		}
 	},
 
 
 
 
 	{
+		id:7,
 		ProjectHeader: {
 			title: 'example ABC',
 			publishDate: 'Jul 26, 2021',
@@ -988,44 +814,8 @@ export const singleProjectData = [
 						'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.',
 				},
 			],
-			SocialSharingHeading: 'Share This',
-			SocialSharing: [
-				{
-					id: 1,
-					name: 'Twitter',
-					icon: <FiTwitter />,
-					url: 'https://twitter.com/realstoman',
-				},
-				{
-					id: 2,
-					name: 'Instagram',
-					icon: <FiInstagram />,
-					url: 'https://instagram.com/realstoman',
-				},
-				{
-					id: 3,
-					name: 'Facebook',
-					icon: <FiFacebook />,
-					url: 'https://facebook.com/',
-				},
-				{
-					id: 4,
-					name: 'LinkedIn',
-					icon: <FiLinkedin />,
-					url: 'https://linkedin.com/',
-				},
-				{
-					id: 5,
-					name: 'Youtube',
-					icon: <FiYoutube />,
-					url: 'https://www.youtube.com/c/StomanStudio',
-				},
-			],
-		},
-		RelatedProject: {
-			title: 'Related Projects',
-			Projects: relatedProjectsFunc('UI/UX Design'),
-
-		},
+		}
 	}
 ]
+
+export const singleProjectData = processData()

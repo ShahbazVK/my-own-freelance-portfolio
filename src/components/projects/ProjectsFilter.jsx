@@ -1,9 +1,6 @@
-const selectOptions = [
-	'Web Application',
-	'Mobile Application',
-	'UI/UX Design',
-	'Branding',
-];
+import { projectsData } from '../../data/projects';
+
+const selectOptions = [...new Set(projectsData.map(project => project.category))]
 
 const ProjectsFilter = ({ setSelectProject }) => {
 	return (

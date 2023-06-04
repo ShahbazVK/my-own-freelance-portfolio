@@ -9,37 +9,32 @@ import UIImage2 from '../images/ui-project-2.jpg';
 export const projectsData = [
 	{
 		id: 1,
-		title: 'Google Health Platform',
-		category: 'Web Application',
+		title: 'Computer Vision Assisted Drive Thru Store with On chain Transactions',
+		category: 'Web3 Application',
 		img: WebImage2,
-		ProjectHeader: {
-			title: 'Project Management UI - From Context',
-			publishDate: 'Jul 26, 2021',
-			tags: 'UI / Frontend',
-		},
 	},
 	{
 		id: 2,
 		title: 'Phoenix Digital Agency',
-		category: 'Mobile Application',
+		category: 'Web3 Application',
 		img: MobileImage2,
 	},
 	{
 		id: 3,
 		title: 'Project Management UI',
-		category: 'UI/UX Design',
+		category: 'Web3 Application',
 		img: UIImage1,
 	},
 	{
 		id: 4,
 		title: 'Cloud Storage Platform',
-		category: 'UI/UX Design',
+		category: 'Web3 Application',
 		img: UIImage2,
 	},
 	{
 		id: 5,
 		title: 'React Social App',
-		category: 'Mobile Application',
+		category: 'Web3 Application',
 		img: MobileImage1,
 	},
 	{
