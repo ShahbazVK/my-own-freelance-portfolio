@@ -17,18 +17,19 @@ const ProjectRelatedProjects = () => {
 				</p>
 
 				<div className="grid grid-cols-1 sm:grid-cols-4 gap-10 controlGap">
-					{onlyCurrentProject.RelatedProject.Projects.map((project) => {
-						return (
-							<Link to={`/projects/single-project/${slugify(project.title)}`}>
-								<img
-									src={project.img}
-									className="rounded-xl cursor-pointer"
-									alt={project.title}
-									key={project.id}
-								/>
-								<p className='text-center text-primary-dark dark:text-primary-light mt-2 text-lg controlText truncateMul'>{project.title}</p>
-							</Link>
-						);
+					{onlyCurrentProject.RelatedProject.Projects.map((project,key) => {
+						if(key < 4)
+							return (
+								<Link to={`/projects/single-project/${slugify(project.title)}`}>
+									<img
+										src={project.img}
+										className="rounded-xl cursor-pointer"
+										alt={project.title}
+										key={project.id}
+									/>
+									<p className='text-center text-primary-dark dark:text-primary-light mt-2 text-lg controlText truncateMul'>{project.title}</p>
+								</Link>
+							);
 					})}
 				</div>
 			</div>

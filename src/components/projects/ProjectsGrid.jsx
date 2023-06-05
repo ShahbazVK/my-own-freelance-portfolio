@@ -101,33 +101,57 @@ const ProjectsGrid = () => {
 
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
 				{selectProject && searchProject
-					? selectProjectsByCategory.filter(pc => searchProjectsByTitle.some(pt => pc.id === pt.id)).map((project) => (
-						<ProjectSingle
-							title={project.title}
-							category={project.category}
-							image={project.img}
-							key={project.id}
-						/>
-					))
-					: selectProject
-						? selectProjectsByCategory.map((project) => (
-							<ProjectSingle
+					? selectProjectsByCategory.filter(pc => searchProjectsByTitle.some(pt => pc.id === pt.id)).map((project, key) => {
+						if (location.pathname === "/" && key < 6)
+							return <ProjectSingle
 								title={project.title}
 								category={project.category}
 								image={project.img}
 								key={project.id}
 							/>
-						))
-						: searchProject
-							? searchProjectsByTitle.map((project) => (
-								<ProjectSingle
+						else if (location.pathname === "/projects")
+							return <ProjectSingle
+								title={project.title}
+								category={project.category}
+								image={project.img}
+								key={project.id}
+							/>
+					})
+					: selectProject
+						? selectProjectsByCategory.map((project, key) => {
+							if (location.pathname === "/" && key < 6)
+								return <ProjectSingle
 									title={project.title}
 									category={project.category}
 									image={project.img}
 									key={project.id}
 								/>
-							))
-							: projects.map((project, key) => {
+							else if (location.pathname === "/projects")
+								return <ProjectSingle
+									title={project.title}
+									category={project.category}
+									image={project.img}
+									key={project.id}
+								/>
+						})
+						: searchProject
+							? (searchProjectsByTitle.filter((obj, index, self) => self.findIndex((o) => o.title === obj.title) === index)).map((project, key) => {
+								if (location.pathname === "/" && key < 6)
+									return <ProjectSingle
+										title={project.title}
+										category={project.category}
+										image={project.img}
+										key={project.id}
+									/>
+								else if (location.pathname === "/projects")
+									return <ProjectSingle
+										title={project.title}
+										category={project.category}
+										image={project.img}
+										key={project.id}
+									/>
+							})
+							: (projects.filter((obj, index, self) => self.findIndex((o) => o.title === obj.title) === index)).map((project, key) => {
 								if (location.pathname === "/" && key < 6)
 									return <ProjectSingle
 										title={project.title}

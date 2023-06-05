@@ -1552,12 +1552,16 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 10rem;
   }
 } */
-@media only screen and (max-width: 440px) {
+.search-project-input, .select-box-input{
+  width: 220px;
+}
+
+@media only screen and (max-width: 530px) {
   .searchbox-select{
     display: block;
   }
   .search-project-input{
-    width: 16rem;
+    width: 16rem !important;
   }
   .select-box-input{
     width: 16rem;
@@ -1568,7 +1572,7 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin: 0;
   }
   .search-project-input{
-    width: 14rem;
+    width: 14rem !important;
   }
   .select-box-input{
     width: 14rem;

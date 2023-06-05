@@ -16,12 +16,12 @@ export const projectsData = [
 	{
 		id: 2,
 		title: 'Phoenix Digital Agency',
-		category: 'Web3 Application',
+		category: 'Desktop Application',
 		img: MobileImage2,
 	},
 	{
 		id: 3,
-		title: 'Project Management UI',
+		title: 'Phoenix Digital Agency',
 		category: 'Web3 Application',
 		img: UIImage1,
 	},
@@ -40,13 +40,13 @@ export const projectsData = [
 	{
 		id: 6,
 		title: 'Apple Design System',
-		category: 'Web Application',
+		category: 'Web3 Application',
 		img: WebImage1,
 	},
 	{
 		id: 7,
 		title: 'example ABC',
-		category: 'UI/UX Design',
+		category: 'Web3 Application',
 		img: UIImage1,
 	},
 	{
