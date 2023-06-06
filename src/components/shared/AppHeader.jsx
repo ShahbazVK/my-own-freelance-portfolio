@@ -63,13 +63,13 @@ const AppHeader = () => {
 						</Link>
 					</div>
 
-					<div className='small-screen-theme-and-hamburger flex md:hidden'>
+					<div className='flex'>
 						{/* Theme switcher small screen */}
 						<div
 							onClick={() => setTheme(activeTheme)}
 							aria-label="Theme Switcher"
 							style={{ padding: '0.55rem' }}
-							className="small-screen-theme block ml-0 bg-primary-light dark:bg-ternary-dark shadow-sm rounded-xl cursor-pointer mr-2"
+							className="block sm:hidden ml-0 bg-primary-light dark:bg-ternary-dark shadow-sm rounded-xl cursor-pointer mr-2"
 						>
 							{activeTheme === 'dark' ? (
 								<FiMoon className="text-ternary-dark hover:text-gray-400 dark:text-ternary-light dark:hover:text-primary-light text-xl" />
@@ -79,7 +79,7 @@ const AppHeader = () => {
 						</div>
 
 						{/* Small screen hamburger menu */}
-						<div className="hamburger-icon">
+						<div className="sm:hidden">
 							<button
 								onClick={toggleMenu}
 								type="button"
@@ -143,7 +143,7 @@ const AppHeader = () => {
 				</div>
 
 				{/* Header links large screen */}
-				<div className="font-general-medium hidden m-0 sm:ml-4 mt-5 sm:mt-3 md:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none">
+				<div className="font-general-medium hidden m-0 sm:ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none">
 					<Link
 						to="/projects"
 						className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
@@ -183,7 +183,7 @@ const AppHeader = () => {
 					<div
 						onClick={() => setTheme(activeTheme)}
 						aria-label="Theme Switcher"
-						className="large-screen-theme ml-8 bg-primary-light dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer"
+						className="ml-8 bg-primary-light dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer"
 					>
 						{activeTheme === 'dark' ? (
 							<FiMoon className="text-ternary-dark hover:text-gray-400 dark:text-ternary-light dark:hover:text-primary-light text-xl" />
