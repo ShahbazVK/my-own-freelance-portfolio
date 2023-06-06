@@ -49,10 +49,10 @@ export const projectsData = [
 		category: 'Web3 Application',
 		img: UIImage1,
 	},
-	{
-		id: 8,
-		title: 'example DEF',
-		category: 'Mobile Application',
-		img: UIImage2,
-	},
+	// {
+	// 	id: 8,
+	// 	title: 'example DEF',
+	// 	category: 'Mobile Application',
+	// 	img: UIImage2,
+	// },
 ];
