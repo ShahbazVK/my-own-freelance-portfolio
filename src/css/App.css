@@ -269,35 +269,10 @@ div.scroll-contact-icons {
 	scrollbar-width: none;  /* Firefox */
 }
 @media only screen and (max-width: 768px) {
-	.hamburger-icon{
-		
-	}
-	.small-screen-theme{
-		/* order: 2; */
-	}
-	.large-screen-theme{
-		display: none;
-	}
-	.small-screen-theme-and-hamburger{
-		width: 80vw;
-		justify-content: end;
-	}
-	.logo-img{
-		width: 40%;
-	}
 }
 @media only screen and (max-width: 418px) {
-	.logo-img{
-		width: 20rem;
-	}
 }
 @media only screen and (min-width: 768px) {
-	.hamburger-icon{
-		display: none;
-	}
-	.small-screen-theme{
-		display: none;
-	}
 }
 @media only screen and (max-width: 418px) {
 	.scrollToTop {
