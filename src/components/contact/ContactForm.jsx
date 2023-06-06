@@ -2,12 +2,17 @@ import { useRef } from 'react';
 import Button from '../reusable/Button';
 import FormInput from '../reusable/FormInput';
 import emailjs from '@emailjs/browser';
+import { Toaster, toast } from 'react-hot-toast';
 
 
 const ContactForm = () => {
 	const form = useRef()
 	return (
 		<div className="w-full lg:w-1/2">
+			<Toaster
+				position="top-center"
+				reverseOrder={false}
+			/>
 			<div className="leading-loose">
 				<form
 					ref={form}
@@ -15,8 +20,10 @@ const ContactForm = () => {
 						e.preventDefault();
 						emailjs.sendForm(process.env.REACT_APP_SERVICE_KEY_EMAILJS, process.env.REACT_APP_TEMPLATE_KEY_EMAILJS, form.current, process.env.REACT_APP_PUBLIC_KEY_EMAILJS)
 							.then((result) => {
+								toast.success('Contact form submitted!', {
+									duration: 4000,
+								})
 								e.target.reset()
-								alert("Form Submitted")
 							}, (error) => {
 								alert(error.text);
 							});
