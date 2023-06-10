@@ -1555,6 +1555,36 @@ Ensure the default browser behavior of the `hidden` attribute.
 .search-project-input, .select-box-input{
   width: 220px;
 }
+.githubIcon, .demoIcon{
+  border-radius: 50%;
+  height:100%;
+  width:100%;
+}
+.githubIconLink{
+  position: absolute;
+  display: block;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  margin-top: 8px;
+  /* margin-bottom: 5px; */
+  margin-right: 8px;
+}
+.demoIconLink{
+  position: absolute;
+  display: block;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  margin-top: 8px;
+  /* margin-bottom: 5px; */
+  margin-right: 53px;
+}
+.iconsContainer{
+  display: flex;
+  justify-content: flex-end;
+  /* align-items: flex-end; */
+}
 
 @media only screen and (max-width: 530px) {
   .searchbox-select{
@@ -1565,6 +1595,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .select-box-input{
     width: 16rem;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .githubIconLink, .demoIconLink{
+    height: 2.25rem;
+    width: 2.25rem;
+  }
+  .demoIconLink{
+    margin-right: 48px;
   }
 }
 @media only screen and (max-width: 340px) {

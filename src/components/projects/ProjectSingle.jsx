@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import slugify from 'react-slugify';
+import githubIcon from '../../images/githubIcon.png' 
+import demoIcon from '../../images/demoIcon.png' 
 
-const ProjectSingle = ({ title, category, image }) => {
+const ProjectSingle = ({ title, category, image, demoURL, codeURL }) => {
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
@@ -15,7 +17,13 @@ const ProjectSingle = ({ title, category, image }) => {
 		>
 			<Link to={`/projects/single-project/${slugify(title)}`} aria-label="Single Project">
 				<div className="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark">
-					<div>
+					<div className="iconsContainer">
+						<Link to={codeURL} aria-label="Single Project" className="githubIconLink">
+							<img src={githubIcon} className="githubIcon" style={{background:'linear-gradient(to right, rgb(141, 141, 145), rgb(0, 0, 0))'}} />
+						</Link>
+						<Link to={demoURL} aria-label="Single Project" className="demoIconLink">
+							<img src={demoIcon} className="demoIcon" style={{background:'linear-gradient(to right, rgb(141, 141, 145), rgb(0, 0, 0))'}} />
+						</Link>
 						<img
 							src={image}
 							className="rounded-t-xl border-none"
