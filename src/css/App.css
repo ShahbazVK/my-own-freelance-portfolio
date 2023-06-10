@@ -268,11 +268,20 @@ div.scroll-contact-icons {
 	-ms-overflow-style: none;  /* IE and Edge */
 	scrollbar-width: none;  /* Firefox */
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
+.small-screen-hamburger-menu{
+	display: none !important;
+}
+.large-screen-open-menu{
+	display: none !important;
+}
 }
 @media only screen and (max-width: 418px) {
 }
 @media only screen and (min-width: 768px) {
+	.small-screen-darkmode-icon{
+		display: none;
+	}
 }
 @media only screen and (max-width: 418px) {
 	.scrollToTop {
