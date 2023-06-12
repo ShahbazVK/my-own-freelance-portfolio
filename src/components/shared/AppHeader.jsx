@@ -24,10 +24,10 @@ const AppHeader = () => {
 
 	function showHireMeModal(isSubmitted) {
 		if (!showModal) {
+			setShowModal(true);
 			document
 				.getElementsByTagName('html')[0]
 				.classList.add('overflow-y-hidden');
-			setShowModal(true);
 		} else {
 			document
 				.getElementsByTagName('html')[0]

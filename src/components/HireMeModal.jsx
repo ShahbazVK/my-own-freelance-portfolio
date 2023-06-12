@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { FiX } from 'react-icons/fi';
-import Button from './reusable/Button';
 import { useState } from 'react';
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
@@ -49,26 +48,26 @@ const HireMeModal = ({ onClose, onRequest }) => {
 						<div className="modal-body p-5 w-full h-full">
 							<form
 								ref={form}
-								onSubmit={(e) => {
+								onSubmit={async (e) => {
 									e.preventDefault();
 									if (name && email && desc && category) {
-										setSendRequest(true)
+										await setSendRequest(true)
 										// setname('')
 										// setemail('')
 										// setdesc('')
 										// setcategory('')
 										e.target.reset()
 										emailjs.sendForm(process.env.REACT_APP_SERVICE_KEY_EMAILJS, process.env.REACT_APP_HIRE_ME_TEMPLATE_KEY_EMAILJS, form.current, process.env.REACT_APP_PUBLIC_KEY_EMAILJS)
-											.then((result) => {
+											.then(async (result) => {
 												onClose(true)
 												setname('')
 												setemail('')
 												setdesc('')
 												setcategory('')
-												setSendRequest(false)
+												await setSendRequest(false)
 											})
-											.catch((err) => {
-												setSendRequest(false)
+											.catch(async (err) => {
+												await setSendRequest(false)
 												toast.error("An error occurred!")
 											})
 									}
@@ -148,7 +147,6 @@ const HireMeModal = ({ onClose, onRequest }) => {
 								<div className="mt-6 pb-4 sm:pb-1">
 									<span
 										type="submit"
-										style={{ paddingBottom: SendRequest && '0.2rem', paddingTop: SendRequest && '0.6rem' }}
 										className={`${SendRequest && 'hire-me-modal-button-opacity'} px-4
 											sm:px-6
 											py-2
@@ -161,7 +159,6 @@ const HireMeModal = ({ onClose, onRequest }) => {
 										aria-label="Submit Request"
 									>
 										<button className={'send-req-button'} disabled={SendRequest}>Send Request</button>
-										{SendRequest && <div className="spin"></div>}
 										{/* <div style={{ marginLeft: '7.4rem', marginBottom: '' }} className="spin"></div> */}
 										{/* <div className="spin"></div> */}
 									</span>

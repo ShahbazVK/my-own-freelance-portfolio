@@ -3,10 +3,12 @@ import Button from '../reusable/Button';
 import FormInput from '../reusable/FormInput';
 import emailjs from '@emailjs/browser';
 import { Toaster, toast } from 'react-hot-toast';
+import { useState } from 'react';
 
 
 const ContactForm = () => {
 	const form = useRef()
+	const [isFormSubmitted, setisFormSubmitted] = useState(false)
 	return (
 		<div className="w-full lg:w-1/2">
 			<Toaster
@@ -17,9 +19,11 @@ const ContactForm = () => {
 				<form
 					ref={form}
 					onSubmit={(e) => {
+						setisFormSubmitted(true)
 						e.preventDefault();
 						emailjs.sendForm(process.env.REACT_APP_SERVICE_KEY_EMAILJS, process.env.REACT_APP_TEMPLATE_KEY_EMAILJS, form.current, process.env.REACT_APP_PUBLIC_KEY_EMAILJS)
 							.then((result) => {
+								setisFormSubmitted(false)
 								toast.success('Contact form submitted!', {
 									duration: 4000,
 								})
@@ -81,7 +85,7 @@ const ContactForm = () => {
 						></textarea>
 					</div>
 
-					<div className="send-message-size font-general-medium px-4 py-2.5 text-white text-center font-medium tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg mt-6 duration-500 controlPadding-2">
+					<div className={`${isFormSubmitted && 'contact-form-submit-button'} send-message-size font-general-medium px-4 py-2.5 text-white text-center font-medium tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg mt-6 duration-500 controlPadding-2`}>
 						<Button
 							title="Send Message"
 							type="submit"
