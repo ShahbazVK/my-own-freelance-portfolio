@@ -7,6 +7,7 @@ import logoLight from '../../images/logo-light-img.png';
 import logoDark from '../../images/logo-dark-img.png';
 import { motion } from 'framer-motion';
 import Button from '../reusable/Button';
+import { Toaster, toast } from 'react-hot-toast';
 
 const AppHeader = () => {
 	const [showMenu, setShowMenu] = useState(false);
@@ -21,7 +22,7 @@ const AppHeader = () => {
 		}
 	}
 
-	function showHireMeModal() {
+	function showHireMeModal(isSubmitted) {
 		if (!showModal) {
 			document
 				.getElementsByTagName('html')[0]
@@ -31,7 +32,17 @@ const AppHeader = () => {
 			document
 				.getElementsByTagName('html')[0]
 				.classList.remove('overflow-y-hidden');
-			setShowModal(false);
+			if (isSubmitted) {
+				toast.success('Application submitted!', {
+					duration: 4000,
+				})
+				setTimeout(() => {
+					setShowModal(false);
+				}, 1000);
+			}
+			else {
+				setShowModal(false)
+			}
 		}
 	}
 
@@ -42,6 +53,10 @@ const AppHeader = () => {
 			id="nav"
 			className="sm:container sm:mx-auto"
 		>
+			<Toaster
+				position="top-center"
+				reverseOrder={false}
+			/>
 			<div className="z-10 max-w-screen-lg xl:max-w-screen-xl block md:flex justify-between items-center py-6">
 				{/* Header menu links and small screen hamburger menu */}
 				<div className="flex justify-between items-center px-4 sm:px-0">
@@ -134,7 +149,7 @@ const AppHeader = () => {
 					<div className="border-t-2 pt-3 sm:pt-0 md:border-t-0 border-primary-light dark:border-secondary-dark">
 						<span
 							onClick={showHireMeModal}
-							className="font-general-medium md:hidden block text-left text-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-sm px-4 py-2 mt-2 duration-300 w-24"
+							className="font-general-medium sm:ml-4 md:ml-0 md:hidden block text-left text-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-sm px-4 py-2 mt-2 duration-300 w-24"
 							aria-label="Hire Me Button"
 						>
 							<Button title="Hire Me" />

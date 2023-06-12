@@ -296,6 +296,34 @@ div.scroll-contact-icons {
 		padding-right: 1rem !important;
 	}
 }
+@media only screen and (max-width: 286px) {
+	.spin{
+		position: absolute;
+		top: 610px !important;
+		left: 90px;
+	}
+}
+@media only screen and (max-width: 300px) {
+	.spin{
+		/* display: flex; */
+		position: absolute;
+		/* margin-top: 20px; */
+		top: 585px;
+		left: 90px;
+	}
+	.hire-me-modal-button-opacity{
+		opacity: 0.5;
+		padding-bottom: 0.6rem !important;
+	}
+}
+@media only screen and (max-width: 400px) {
+	@media screen and ( max-height: 715px ) { 
+		.hire-me-modal{
+			margin-top: 40vh;
+			margin-bottom: 5rem;
+	  	}
+	}
+}
 @media only screen and (min-width: 418px) {
 	.send-message-size{
 		width: 12rem;
@@ -305,3 +333,33 @@ div.scroll-contact-icons {
 		height: 2.6rem;
 	}
 }
+@keyframes spinner {
+	0% {
+	  transform: translate3d(-50%, -50%, 0) rotate(0deg);
+	}
+	100% {
+	  transform: translate3d(-50%, -50%, 0) rotate(360deg);
+	}
+  }
+  .spin {
+	animation: 1.5s linear infinite spinner;
+	animation-play-state: inherit;
+	border: solid 5px #cfd0d1;
+	border-bottom-color: #475f6e;
+	border-radius: 50%;
+	content: "";
+	height: 18px;
+	width: 18px;
+	float: right;
+	margin-left: 20px;
+	margin-top: 11px;
+	/* position: absolute; */
+	/* top: 10%; */
+	/* left: 10%; */
+	/* transform: translate3d(-50%, -50%, 0); */
+	will-change: transform;
+  }
+ .hide-scrollbar-modal::-webkit-scrollbar {
+    display: none;
+}
+

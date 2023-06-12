@@ -17,8 +17,8 @@ export const ProjectsProvider = (props) => {
 			.includes(searchProject.toLowerCase())
 			? item
 			: searchProject === ''
-			? item
-			: '';
+				? item
+				: '';
 		return result;
 	});
 

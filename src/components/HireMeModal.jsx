@@ -1,15 +1,22 @@
 import { motion } from 'framer-motion';
 import { FiX } from 'react-icons/fi';
 import Button from './reusable/Button';
+import { useState } from 'react';
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import { Toaster, toast } from 'react-hot-toast';
+import { projectsData } from '../data/projects';
 
-const selectOptions = [
-	'Web Application',
-	'Mobile Application',
-	'UI/UX Design',
-	'Branding',
-];
+const selectOptions = [...new Set(projectsData.map(project => project.category))]
 
 const HireMeModal = ({ onClose, onRequest }) => {
+	const form = useRef()
+	const [name, setname] = useState('')
+	const [email, setemail] = useState('')
+	const [category, setcategory] = useState('hardcoded')
+	const [desc, setdesc] = useState('')
+	const [SendRequest, setSendRequest] = useState(false)
+
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
@@ -17,19 +24,23 @@ const HireMeModal = ({ onClose, onRequest }) => {
 			exit={{ opacity: 0 }}
 			className="font-general-medium fixed inset-0 z-30 transition-all duration-500"
 		>
+			<Toaster
+				position="top-center"
+				reverseOrder={false}
+			/>
 			{/* Modal Backdrop */}
 			<div className="bg-filter bg-black bg-opacity-50 fixed inset-0 w-full h-full z-20"></div>
 
 			{/* Modal Content */}
 			<main className="flex flex-col items-center justify-center h-full w-full">
-				<div className="modal-wrapper flex items-center z-30">
-					<div className="modal max-w-md mx-5 xl:max-w-xl lg:max-w-xl md:max-w-xl bg-secondary-light dark:bg-primary-dark max-h-screen shadow-lg flex-row rounded-lg relative">
+				<div style={{ overflow: "scroll" }} className="hide-scrollbar-modal modal-wrapper flex items-center z-30 overflow-scroll">
+					<div className="hire-me-modal modal max-w-md mx-5 xl:max-w-xl lg:max-w-xl md:max-w-xl bg-secondary-light dark:bg-primary-dark min-h-screen shadow-lg flex-row rounded-lg relative">
 						<div className="modal-header flex justify-between gap-10 p-5 border-b border-ternary-light dark:border-ternary-dark">
 							<h5 className=" text-primary-dark dark:text-primary-light text-xl">
 								What project are you looking for?
 							</h5>
 							<button
-								onClick={onClose}
+								onClick={() => onClose(false)}
 								className="px-4 font-bold text-primary-dark dark:text-primary-light"
 							>
 								<FiX className="text-3xl" />
@@ -37,8 +48,30 @@ const HireMeModal = ({ onClose, onRequest }) => {
 						</div>
 						<div className="modal-body p-5 w-full h-full">
 							<form
+								ref={form}
 								onSubmit={(e) => {
 									e.preventDefault();
+									if (name && email && desc && category) {
+										setSendRequest(true)
+										// setname('')
+										// setemail('')
+										// setdesc('')
+										// setcategory('')
+										e.target.reset()
+										emailjs.sendForm(process.env.REACT_APP_SERVICE_KEY_EMAILJS, process.env.REACT_APP_HIRE_ME_TEMPLATE_KEY_EMAILJS, form.current, process.env.REACT_APP_PUBLIC_KEY_EMAILJS)
+											.then((result) => {
+												onClose(true)
+												setname('')
+												setemail('')
+												setdesc('')
+												setcategory('')
+												setSendRequest(false)
+											})
+											.catch((err) => {
+												setSendRequest(false)
+												toast.error("An error occurred!")
+											})
+									}
 								}}
 								className="max-w-xl m-4 text-left"
 							>
@@ -48,9 +81,13 @@ const HireMeModal = ({ onClose, onRequest }) => {
 										id="name"
 										name="name"
 										type="text"
-										required=""
+										required
+										onInvalid={(e) => e.target.setCustomValidity("Please fill out your name.")}
+										onInput={e => e.target.setCustomValidity('')}
 										placeholder="Name"
 										aria-label="Name"
+										onChange={(e) => setname(e.target.value)}
+										value={name}
 									/>
 								</div>
 								<div className="mt-6">
@@ -58,20 +95,27 @@ const HireMeModal = ({ onClose, onRequest }) => {
 										className="w-full px-5 py-2 border dark:border-secondary-dark rounded-md text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
 										id="email"
 										name="email"
-										type="text"
-										required=""
+										type="email"
+										required
+										onInvalid={(e) => e.target.setCustomValidity("Please fill out your email.")}
+										onInput={e => e.target.setCustomValidity('')}
 										placeholder="Email"
 										aria-label="Email"
+										onChange={(e) => setemail(e.target.value)}
+										value={email}
 									/>
 								</div>
 								<div className="mt-6">
 									<select
 										className="w-full px-5 py-2 border dark:border-secondary-dark rounded-md text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
 										id="subject"
-										name="subject"
+										name="category"
 										type="text"
-										required=""
+										required
+
 										aria-label="Project Category"
+										onChange={(e) => setcategory(e.target.value)}
+										value={category}
 									>
 										{selectOptions.map((option) => (
 											<option
@@ -91,16 +135,21 @@ const HireMeModal = ({ onClose, onRequest }) => {
 										name="message"
 										cols="14"
 										rows="6"
+										required
+										onInvalid={(e) => e.target.setCustomValidity("Please fill out description")}
+										onInput={F => F.target.setCustomValidity('')}
 										aria-label="Details"
 										placeholder="Project description"
+										onChange={(e) => setdesc(e.target.value)}
+										value={desc}
 									></textarea>
 								</div>
 
 								<div className="mt-6 pb-4 sm:pb-1">
 									<span
-										onClick={onClose}
 										type="submit"
-										className="px-4
+										style={{ paddingBottom: SendRequest && '0.2rem', paddingTop: SendRequest && '0.6rem' }}
+										className={`${SendRequest && 'hire-me-modal-button-opacity'} px-4
 											sm:px-6
 											py-2
 											sm:py-2.5
@@ -108,10 +157,13 @@ const HireMeModal = ({ onClose, onRequest }) => {
 											bg-indigo-500
 											hover:bg-indigo-600
 											rounded-md
-											focus:ring-1 focus:ring-indigo-900 duration-500"
+											focus:ring-1 focus:ring-indigo-900 duration-500`}
 										aria-label="Submit Request"
 									>
-										<Button title="Send Request" />
+										<button className={'send-req-button'} disabled={SendRequest}>Send Request</button>
+										{SendRequest && <div className="spin"></div>}
+										{/* <div style={{ marginLeft: '7.4rem', marginBottom: '' }} className="spin"></div> */}
+										{/* <div className="spin"></div> */}
 									</span>
 								</div>
 							</form>
