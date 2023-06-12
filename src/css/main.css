@@ -1138,6 +1138,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .overflowControl{
   overflow: hidden;
 }
+.profilePic{
+  width: -webkit-fill-available;
+}
 
 @media (min-width: 640px) and (max-width: 768px) {
   .controlPadding{
@@ -1155,10 +1158,35 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-top:0.4rem !important;
     padding-bottom:0.4rem !important;
   }
+  .controlMargin-3{
+    padding-top: 3rem !important;
+  }
+  .counterItemHeader{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
 }
 @media (min-width: 640px) and (max-width: 768px) {
   .controlGap{
     gap:1.8rem !important;
+  }
+  .flexOverride{
+    display: block !important;
+  }
+}
+@media (max-width: 768px) {
+  .counterItemOverride{
+    margin-bottom: 3rem !important;
+  }
+  .flexOverride{
+    padding-top: 4rem !important;
+    padding-bottom: 1rem !important;
+  }
+}
+@media (max-width: 640px) {
+  .flexOverride{
+    padding-top: 3rem !important;
+    padding-bottom: 0.2rem !important;
   }
 }
 @media (min-width: 640px) and (max-width: 768px) {
