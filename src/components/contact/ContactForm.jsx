@@ -86,11 +86,11 @@ const ContactForm = () => {
 					</div>
 
 					<div className={`${isFormSubmitted && 'contact-form-submit-button'} send-message-size font-general-medium px-4 py-2.5 text-white text-center font-medium tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg mt-6 duration-500 controlPadding-2`}>
-						<Button
-							title="Send Message"
+						<button
+							disabled={isFormSubmitted}
 							type="submit"
 							aria-label="Send Message"
-						/>
+						>Send Message</button>
 					</div>
 				</form>
 			</div>
