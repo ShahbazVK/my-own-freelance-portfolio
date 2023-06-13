@@ -34,7 +34,7 @@ const HireMeModal = ({ onClose, onRequest }) => {
 			<main className="flex flex-col items-center justify-center h-full w-full">
 				<div style={{ overflow: "scroll" }} className="hide-scrollbar-modal modal-wrapper flex items-center z-30 overflow-scroll">
 					<div className="hire-me-modal modal max-w-md mx-5 xl:max-w-xl lg:max-w-xl md:max-w-xl bg-secondary-light dark:bg-primary-dark min-h-screen shadow-lg flex-row rounded-lg relative">
-						<div className="modal-header flex justify-between gap-10 p-5 border-b border-ternary-light dark:border-ternary-dark">
+						<div className="modal-header flex justify-between p-5 border-b border-ternary-light dark:border-ternary-dark">
 							<h5 className=" text-primary-dark dark:text-primary-light text-xl">
 								What project are you looking for?
 							</h5>
@@ -155,7 +155,7 @@ const HireMeModal = ({ onClose, onRequest }) => {
 											bg-indigo-500
 											hover:bg-indigo-600
 											rounded-md
-											focus:ring-1 focus:ring-indigo-900 duration-500`}
+											focus:ring-1 focus:ring-indigo-900 duration-500 sendReqWidth`}
 										aria-label="Submit Request"
 									>
 										<button className={'send-req-button'} disabled={SendRequest}>Send Request</button>

@@ -1189,10 +1189,24 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-bottom: 0.2rem !important;
   }
 }
+@media (max-width: 440px) {
+  .sendReqWidth{
+    width: -webkit-fill-available;
+    text-align: center;
+  }
+}
 @media (min-width: 640px) and (max-width: 768px) {
   .controlText{
     font-size: 1rem !important;
     line-height: 1.5rem,!important; 
+  }
+  .hiremeContainer{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-top: 0.75rem !important;
+  }
+  .hiremeSpan{
+    margin-left: 0 !important;
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {

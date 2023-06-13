@@ -308,14 +308,15 @@ div.scroll-contact-icons {
 	background-color: #75769b;
 }
 /* } */
-@media only screen and (max-width: 400px) {
-	@media screen and ( max-height: 715px ) { 
+@media only screen and (max-width: 450px) {
+	@media screen and ( max-height: 640px ) { 
 		.hire-me-modal{
-			margin-top: 40vh;
-			margin-bottom: 5rem;
+			margin-top: 21rem;
+    		margin-bottom: 2rem;
 	  	}
 	}
 }
+
 @media only screen and (min-width: 418px) {
 	.send-message-size{
 		width: 12rem;

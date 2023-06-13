@@ -146,10 +146,10 @@ const AppHeader = () => {
 					>
 						Contact
 					</Link>
-					<div className="border-t-2 pt-3 sm:pt-0 md:border-t-0 border-primary-light dark:border-secondary-dark">
+					<div className="border-t-2 pt-3 sm:pt-0 md:border-t-0 border-primary-light dark:border-secondary-dark hiremeContainer">
 						<span
 							onClick={showHireMeModal}
-							className="font-general-medium sm:ml-4 md:ml-0 md:hidden block text-left text-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-sm px-4 py-2 mt-2 duration-300 w-24"
+							className="font-general-medium sm:ml-4 md:ml-0 md:hidden block text-left text-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-sm px-4 py-2 mt-2 duration-300 w-24 hiremeSpan"
 							aria-label="Hire Me Button"
 						>
 							<Button title="Hire Me" />
