@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import slugify from 'react-slugify';
-import githubIcon from '../../images/githubIcon.png' 
-import demoIcon from '../../images/demoIcon.png' 
+import githubIcon from '../../images/githubIcon.png'
+import demoIcon from '../../images/demoIcon.png'
 
 const ProjectSingle = ({ title, category, image, demoURL, codeURL }) => {
 	return (
@@ -18,15 +18,16 @@ const ProjectSingle = ({ title, category, image, demoURL, codeURL }) => {
 			<Link to={`/projects/single-project/${slugify(title)}`} aria-label="Single Project">
 				<div className="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark">
 					<div className="iconsContainer">
-						<Link to={codeURL} aria-label="Single Project" className="githubIconLink">
-							<img src={githubIcon} className="githubIcon" style={{background:'linear-gradient(to right, rgb(141, 141, 145), rgb(0, 0, 0))'}} />
-						</Link>
-						<Link to={demoURL} aria-label="Single Project" className="demoIconLink">
-							<img src={demoIcon} className="demoIcon" style={{background:'linear-gradient(to right, rgb(141, 141, 145), rgb(0, 0, 0))'}} />
-						</Link>
+						<button onClick={() => window.open(codeURL, '_blank')} aria-label="Single Project" className="githubIconLink">
+							<img src={githubIcon} className="githubIcon" style={{ background: 'linear-gradient(to right, rgb(141, 141, 145), rgb(0, 0, 0))' }} />
+						</button>
+						<button onClick={() => window.open(demoURL, '_blank')} aria-label="Single Project" className="demoIconLink">
+							<img src={demoIcon} className="demoIcon" style={{ background: 'linear-gradient(to right, rgb(141, 141, 145), rgb(0, 0, 0))' }} />
+						</button>
 						<img
 							src={image}
-							className="rounded-t-xl border-none"
+							// style={{ height: "15rem", width: '100%' }}
+							className="projects-display-image rounded-t-xl border-none"
 							alt="Single Project"
 						/>
 					</div>

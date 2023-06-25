@@ -1,6 +1,6 @@
-
 import { useContext } from 'react';
 import AboutMeContext from '../../context/AboutMeContext';
+import aboutMePic from '../../images/aboutMePic.jpeg'
 
 const AboutMeBio = () => {
 	const { aboutMe } = useContext(AboutMeContext);
@@ -8,7 +8,7 @@ const AboutMeBio = () => {
 	return (
 		<div className="block sm:flex sm:gap-10 mt-10 sm:mt-20">
 			<div className="sm:w-1/4 mb-7 sm:mb-0">
-				<img className='rounded-lg profilePic' src="https://react-tailwindcss-portfolio.netlify.app/static/media/profile.bbe2eb2e.jpeg" alt="profile-pic" />
+				<img className='rounded-lg profilePic' src={aboutMePic} alt="profile-pic" />
 			</div>
 
 			<div className="font-general-regular w-full sm:w-3/4 text-left">

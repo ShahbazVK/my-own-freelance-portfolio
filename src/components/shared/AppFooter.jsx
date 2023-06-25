@@ -4,35 +4,37 @@ import {
 	FiLinkedin,
 	FiGlobe,
 	FiYoutube,
+	FiFacebook,
 } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
 import AppFooterCopyright from './AppFooterCopyright';
 
 const socialLinks = [
 	{
 		id: 1,
-		icon: <FiGlobe />,
-		url: 'https://www.stoman.me/',
+		icon: <FiGithub />,
+		url: 'https://github.com/ShahbazVK',
 	},
 	{
 		id: 2,
-		icon: <FiGithub />,
-		url: 'https://github.com/realstoman',
+		icon: <FiLinkedin />,
+		url: 'https://www.linkedin.com/in/shahbaz-ali-4a80a220a/',
 	},
 	{
 		id: 3,
-		icon: <FiTwitter />,
-		url: 'https://twitter.com/realstoman',
+		icon: <FaWhatsapp />,
+		url: '//api.whatsapp.com/send?phone=923243458284&text=Hello Shahbaz Ali',
 	},
 	{
 		id: 4,
-		icon: <FiLinkedin />,
-		url: 'https://www.linkedin.com/in/realstoman',
+		icon: <FiFacebook />,
+		url: 'https://www.facebook.com/ali.shahbaz.752',
 	},
-	{
-		id: 5,
-		icon: <FiYoutube />,
-		url: 'https://www.youtube.com/c/realstoman',
-	},
+	// {
+	// 	id: 5,
+	// 	icon: <FiFacebook />,
+	// 	url: 'https://www.facebook.com/ali.shahbaz.752',
+	// },
 ];
 
 const AppFooter = () => {

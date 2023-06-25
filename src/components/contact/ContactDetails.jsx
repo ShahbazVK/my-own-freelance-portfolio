@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 import { FiPhone, FiMapPin, FiMail } from 'react-icons/fi';
 
 
-const constantEmail = "user@gmail.com"
+const constantEmail = "shahbazalivk@gmail.com"
 const contacts = [
 	{
 		id: 1,
-		name: 'Your City, Your Country',
+		name: 'Chicago, USA',
 		icon: <FiMapPin />,
 	},
 	{
@@ -16,7 +16,7 @@ const contacts = [
 	},
 	{
 		id: 3,
-		name: '555 8888 888',
+		name: '+92 324 345 8284',
 		icon: <FiPhone />,
 	},
 ];
@@ -52,9 +52,9 @@ const ContactDetails = () => {
 	return (
 		<div className="w-full lg:w-1/2">
 			<div className="max-w-xl m-4 p-6 sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left controlWidth controlMargin">
-			<p className="font-general-medium text-primary-dark dark:text-primary-light text-2xl mb-8">
-						Contact Details
-			</p>
+				<p className="font-general-medium text-primary-dark dark:text-primary-light text-2xl mb-8">
+					Contact Details
+				</p>
 				<ul className="font-general-regular">
 					{contacts.map((contact) => (
 						<li className="flex " key={contact.id}>
