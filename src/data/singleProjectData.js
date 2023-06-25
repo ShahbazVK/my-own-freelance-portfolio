@@ -8,12 +8,14 @@ import Image6 from '../images/ui-project-2.jpg';
 // Import icons
 import {
 	FiFacebook,
+	FiGithub,
 	FiInstagram,
 	FiLinkedin,
 	FiTwitter,
 	FiYoutube,
 } from 'react-icons/fi';
 import { projectsData } from './projects';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const processData = () => {
 	return singleProjectRawData.map(rawProject => {
@@ -21,34 +23,28 @@ const processData = () => {
 		rawProject['ProjectInfo'].SocialSharing = [
 			{
 				id: 1,
-				name: 'Twitter',
-				icon: <FiTwitter />,
-				url: 'https://twitter.com/realstoman',
+				name: 'Github',
+				icon: <FiGithub />,
+				url: 'https://github.com/ShahbazVK',
 			},
 			{
 				id: 2,
-				name: 'Instagram',
-				icon: <FiInstagram />,
-				url: 'https://instagram.com/realstoman',
+				name: 'LinkedIn',
+				icon: <FiLinkedin />,
+				url: 'https://www.linkedin.com/in/shahbaz-ali-4a80a220a/',
 			},
 			{
 				id: 3,
-				name: 'Facebook',
-				icon: <FiFacebook />,
-				url: 'https://facebook.com/',
+				icon: <FaWhatsapp />,
+				url: '//api.whatsapp.com/send?phone=923243458284&text=Hello Shahbaz Ali',
 			},
 			{
 				id: 4,
-				name: 'LinkedIn',
-				icon: <FiLinkedin />,
-				url: 'https://linkedin.com/',
+				name: 'Facebook',
+				icon: <FiFacebook />,
+				url: 'https://www.facebook.com/ali.shahbaz.752',
 			},
-			{
-				id: 5,
-				name: 'Youtube',
-				icon: <FiYoutube />,
-				url: 'https://www.youtube.com/c/StomanStudio',
-			},
+
 		]
 
 		let category = (projectsData.find(project => project.id === rawProject.id)).category
